@@ -5,9 +5,12 @@ import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.GameRule;
+import org.bukkit.NamespacedKey;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
@@ -46,19 +49,37 @@ public class iWorldSettingsMain extends JavaPlugin {
     public void applyWorldSettings(World world) {
         WorldSettings worldSettings = getSettings(world);
 
+        disableGameRule(world, GameRule.DO_DAYLIGHT_CYCLE, worldSettings.fixedTime);
         if (worldSettings.fixedTime) {
-            world.setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
             world.setTime(worldSettings.fixedTimeMeaning);
         }
-        if (worldSettings.noMobGriefing) {
-            world.setGameRule(GameRule.MOB_GRIEFING, false);
-        }
+        disableGameRule(world, GameRule.MOB_GRIEFING, worldSettings.noMobGriefing);
         if (worldSettings.noMobSpawn) {
             for (Entity entity : world.getEntities()) {
                 if (!(entity instanceof Player)) {
                     entity.remove();
                 }
             }
+        }
+    }
+
+    /**
+     * Sets the gamerule to false and remembers its previous value in the world data.
+     * When the setting is turned off, restores the previous value.
+     */
+    private void disableGameRule(World world, GameRule<Boolean> rule, boolean disable) {
+        NamespacedKey key = new NamespacedKey(this, rule.getName().toLowerCase());
+        PersistentDataContainer data = world.getPersistentDataContainer();
+
+        if (disable) {
+            if (!data.has(key)) {
+                Boolean previous = world.getGameRuleValue(rule);
+                data.set(key, PersistentDataType.BOOLEAN, previous == null || previous);
+            }
+            world.setGameRule(rule, false);
+        } else if (data.has(key)) {
+            world.setGameRule(rule, data.get(key, PersistentDataType.BOOLEAN));
+            data.remove(key);
         }
     }
 }
