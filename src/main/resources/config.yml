@@ -1,0 +1,33 @@
+# Settings for all worlds
+default:
+  settings-player:
+    noDamage: false
+    noHunger: false
+    gameMode: '' # SURVIVAL, CREATIVE, ADVENTURE, SPECTATOR, empty - don't change
+  settings-world:
+    noBreak: false
+    noPlace: false
+    noInteract: false
+    noFluidFlow: false
+    noExplosions: false
+    noWeather: false
+    noFireSpread: false
+    noLeafDecay: false
+    noGrowth: false
+    noMobGriefing: false
+    noMobSpawn: false
+    fixedTime:
+      enabled: false
+      meaning: 6000
+
+# Overrides for specific worlds, only what differs from default
+worlds: {}
+# Example:
+# worlds:
+#   lobby:
+#     settings-player:
+#       noDamage: true
+#       gameMode: ADVENTURE
+#     settings-world:
+#       noBreak: true
+#       noPlace: true
