@@ -1,4 +1,4 @@
-package net.infyrium.iworldsettings;
+package net.infyrium.iworldsettings.listeners;
 
 import org.bukkit.World;
 import org.bukkit.event.EventHandler;
@@ -20,6 +20,9 @@ import org.bukkit.event.weather.LightningStrikeEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
 import org.bukkit.event.world.StructureGrowEvent;
 import org.bukkit.event.world.WorldLoadEvent;
+
+import net.infyrium.iworldsettings.iWorldSettingsMain;
+import net.infyrium.iworldsettings.WorldSettings;
 
 
 public class BlockEventListener implements Listener {

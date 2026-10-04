@@ -13,6 +13,9 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import net.infyrium.iworldsettings.listeners.BlockEventListener;
+import net.infyrium.iworldsettings.listeners.PlayerEventListener;
+
 
 public class iWorldSettingsMain extends JavaPlugin {
 

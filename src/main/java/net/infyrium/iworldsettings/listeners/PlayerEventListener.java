@@ -1,4 +1,4 @@
-package net.infyrium.iworldsettings;
+package net.infyrium.iworldsettings.listeners;
 
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
@@ -9,6 +9,8 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+
+import net.infyrium.iworldsettings.iWorldSettingsMain;
 
 public class PlayerEventListener implements Listener {
 
