@@ -1,7 +1,9 @@
-package net.infyrium.iworldsettings;
+package net.infyrium.iworldsettings.models;
 
 import org.bukkit.GameMode;
 import org.bukkit.configuration.file.FileConfiguration;
+
+import net.infyrium.iworldsettings.iWorldSettingsMain;
 
 /**
  * Settings of one world: values from worlds.{world} with fallback to default.

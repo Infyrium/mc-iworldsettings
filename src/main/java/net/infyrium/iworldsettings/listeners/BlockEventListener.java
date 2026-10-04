@@ -22,7 +22,7 @@ import org.bukkit.event.world.StructureGrowEvent;
 import org.bukkit.event.world.WorldLoadEvent;
 
 import net.infyrium.iworldsettings.iWorldSettingsMain;
-import net.infyrium.iworldsettings.WorldSettings;
+import net.infyrium.iworldsettings.models.WorldSettings;
 
 
 public class BlockEventListener implements Listener {

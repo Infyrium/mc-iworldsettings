@@ -15,6 +15,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import net.infyrium.iworldsettings.listeners.BlockEventListener;
 import net.infyrium.iworldsettings.listeners.PlayerEventListener;
+import net.infyrium.iworldsettings.models.WorldSettings;
 
 
 public class iWorldSettingsMain extends JavaPlugin {
