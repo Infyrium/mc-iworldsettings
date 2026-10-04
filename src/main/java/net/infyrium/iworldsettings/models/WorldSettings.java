@@ -37,23 +37,23 @@ public class WorldSettings {
         this.config = plugin.getConfig();
         this.worldPath = "worlds." + worldName + ".";
 
-        this.noDamage = getBoolean("settings-player.noDamage");
-        this.noHunger = getBoolean("settings-player.noHunger");
-        this.gameMode = parseGameMode(getString("settings-player.gameMode"), worldName);
+        this.noDamage = getBoolean("player.noDamage");
+        this.noHunger = getBoolean("player.noHunger");
+        this.gameMode = parseGameMode(getString("player.gameMode"), worldName);
 
-        this.noBreak = getBoolean("settings-world.noBreak");
-        this.noPlace = getBoolean("settings-world.noPlace");
-        this.noInteract = getBoolean("settings-world.noInteract");
-        this.noFluidFlow = getBoolean("settings-world.noFluidFlow");
-        this.noExplosions = getBoolean("settings-world.noExplosions");
-        this.noWeather = getBoolean("settings-world.noWeather");
-        this.noFireSpread = getBoolean("settings-world.noFireSpread");
-        this.noLeafDecay = getBoolean("settings-world.noLeafDecay");
-        this.noGrowth = getBoolean("settings-world.noGrowth");
-        this.noMobGriefing = getBoolean("settings-world.noMobGriefing");
-        this.noMobSpawn = getBoolean("settings-world.noMobSpawn");
-        this.fixedTime = getBoolean("settings-world.fixedTime.enabled");
-        this.fixedTimeMeaning = config.getLong(resolve("settings-world.fixedTime.meaning"));
+        this.noBreak = getBoolean("world.noBreak");
+        this.noPlace = getBoolean("world.noPlace");
+        this.noInteract = getBoolean("world.noInteract");
+        this.noFluidFlow = getBoolean("world.noFluidFlow");
+        this.noExplosions = getBoolean("world.noExplosions");
+        this.noWeather = getBoolean("world.noWeather");
+        this.noFireSpread = getBoolean("world.noFireSpread");
+        this.noLeafDecay = getBoolean("world.noLeafDecay");
+        this.noGrowth = getBoolean("world.noGrowth");
+        this.noMobGriefing = getBoolean("world.noMobGriefing");
+        this.noMobSpawn = getBoolean("world.noMobSpawn");
+        this.fixedTime = getBoolean("world.fixedTime.enabled");
+        this.fixedTimeMeaning = config.getLong(resolve("world.fixedTime.time"));
     }
 
     private String resolve(String path) {

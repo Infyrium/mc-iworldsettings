@@ -1,10 +1,10 @@
 # Settings for all worlds
 default:
-  settings-player:
+  player:
     noDamage: false
     noHunger: false
     gameMode: '' # SURVIVAL, CREATIVE, ADVENTURE, SPECTATOR, empty - don't change
-  settings-world:
+  world:
     noBreak: false
     noPlace: false
     noInteract: false
@@ -18,16 +18,18 @@ default:
     noMobSpawn: false
     fixedTime:
       enabled: false
-      meaning: 6000
+      time: 6000
 
 # Overrides for specific worlds, only what differs from default
 worlds: {}
 # Example:
 # worlds:
 #   lobby:
-#     settings-player:
+#     player:
 #       noDamage: true
 #       gameMode: ADVENTURE
-#     settings-world:
+#     world:
 #       noBreak: true
 #       noPlace: true
+
+configVersion: 1 # Format version of this file, do not change

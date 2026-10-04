@@ -16,6 +16,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import net.infyrium.iworldsettings.listeners.BlockEventListener;
 import net.infyrium.iworldsettings.listeners.PlayerEventListener;
 import net.infyrium.iworldsettings.models.WorldSettings;
+import net.infyrium.iworldsettings.utils.ConfigUpdater;
 
 
 public class iWorldSettingsMain extends JavaPlugin {
@@ -24,6 +25,7 @@ public class iWorldSettingsMain extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        ConfigUpdater.backupIfOutdated(this, "config.yml");
         saveDefaultConfig();
 
         Bukkit.getPluginManager().registerEvents(new PlayerEventListener(this), this);
